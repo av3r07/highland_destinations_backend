@@ -58,9 +58,9 @@ service functions are ready for a future unit, integration, and E2E test framewo
 
 ## Vercel deployment
 
-Vercel discovers the serverless entrypoint at `api/index.ts`. Deploy the repository root as a
-Node.js project without overriding the detected build settings. The function preserves the API
-paths, so the versioned production routes are available under `/api/v1`, including
+The repository explicitly configures Vercel to build `api/index.ts` as a Node.js serverless
+function. Deploy the repository root without overriding the configured build settings. The
+function preserves the API paths, so the versioned production routes are available under `/api/v1`, including
 `/api/v1/health/live` and `/api/v1/status`.
 
 Configure these environment variables in the Vercel project for every environment that will run
