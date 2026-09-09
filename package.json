@@ -9,15 +9,16 @@
     "npm": ">=11.0.0 <12.0.0"
   },
   "scripts": {
-    "build": "tsc -p tsconfig.build.json",
-    "format": "prettier --write \"src/**/*.ts\"",
-    "format:check": "prettier --check \"src/**/*.ts\"",
-    "lint": "eslint \"src/**/*.ts\"",
-    "lint:fix": "eslint \"src/**/*.ts\" --fix",
-    "start": "node dist/main.js",
+    "clean": "node -e \"require('node:fs').rmSync('dist', { recursive: true, force: true })\"",
+    "build": "npm run clean && tsc -p tsconfig.build.json",
+    "format": "prettier --write \"src/**/*.ts\" \"api/**/*.ts\"",
+    "format:check": "prettier --check \"src/**/*.ts\" \"api/**/*.ts\"",
+    "lint": "eslint \"src/**/*.ts\" \"api/**/*.ts\"",
+    "lint:fix": "eslint \"src/**/*.ts\" \"api/**/*.ts\" --fix",
+    "start": "node dist/src/main.js",
     "start:dev": "nest start --watch",
     "start:debug": "nest start --debug --watch",
-    "start:prod": "node dist/main.js",
+    "start:prod": "node dist/src/main.js",
     "typecheck": "tsc --noEmit",
     "check": "npm run format:check && npm run lint && npm run typecheck && npm run build",
     "security:audit": "npm audit --audit-level=high"

@@ -56,6 +56,27 @@ npm run security:audit
 Testing infrastructure is intentionally not installed yet. Route registration functions and
 service functions are ready for a future unit, integration, and E2E test framework.
 
+## Vercel deployment
+
+Vercel discovers the serverless entrypoint at `api/index.ts`. Deploy the repository root as a
+Node.js project without overriding the detected build settings. The function preserves the API
+paths, so the versioned production routes are available under `/api/v1`, including
+`/api/v1/health/live` and `/api/v1/status`.
+
+Configure these environment variables in the Vercel project for every environment that will run
+the function:
+
+- `MONGODB_URI` (required; use a rotated credential and a MongoDB deployment that allows Vercel)
+- `CORS_ORIGINS` (comma-separated origins, without trailing slashes)
+- `NODE_ENV=production`
+- `LOG_LEVEL=info`
+- `MONGODB_MAX_POOL_SIZE`, `MONGODB_MIN_POOL_SIZE`, `MONGODB_SERVER_SELECTION_TIMEOUT_MS`,
+  `MONGODB_CONNECT_TIMEOUT_MS`, `MONGODB_SOCKET_TIMEOUT_MS`, `RATE_LIMIT_TTL_MS`, and
+  `RATE_LIMIT_MAX` as needed
+
+Do not upload `.env` or commit database credentials. After deployment, verify the live and ready
+health routes and inspect Vercel function logs if initialization fails.
+
 ## Architecture
 
 The application is a small NestJS service. Controllers handle HTTP concerns, injectable services

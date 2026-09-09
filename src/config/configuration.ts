@@ -7,7 +7,7 @@ export function getConfiguration(): AppConfiguration {
     environment: environment.NODE_ENV,
     port: environment.PORT,
     corsOrigins: environment.CORS_ORIGINS.split(',')
-      .map((origin) => origin.trim())
+      .map((origin) => origin.trim().replace(/\/+$/, ''))
       .filter(Boolean),
     rateLimit: { ttlMs: environment.RATE_LIMIT_TTL_MS, limit: environment.RATE_LIMIT_MAX },
     logging: { level: environment.LOG_LEVEL },
