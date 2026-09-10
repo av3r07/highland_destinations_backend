@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
-  "description": "NestJS and MongoDB backend for Highland Destinations",
+  "description": "Express and MongoDB backend for Highland Destinations",
   "license": "UNLICENSED",
   "engines": {
     "node": ">=24.0.0 <25.0.0",
@@ -17,30 +17,23 @@
     "lint": "eslint \"src/**/*.ts\" \"api/**/*.ts\"",
     "lint:fix": "eslint \"src/**/*.ts\" \"api/**/*.ts\" --fix",
     "start": "node dist/src/main.js",
-    "start:dev": "nest start --watch",
-    "start:debug": "nest start --debug --watch",
+    "start:dev": "tsx watch src/main.ts",
+    "start:debug": "tsx watch --inspect src/main.ts",
     "start:prod": "node dist/src/main.js",
     "typecheck": "tsc --noEmit",
     "check": "npm run format:check && npm run lint && npm run typecheck && npm run build",
     "security:audit": "npm audit --audit-level=high"
   },
   "dependencies": {
-    "@nestjs/common": "^12.0.1",
-    "@nestjs/core": "^12.0.1",
-    "@nestjs/mongoose": "^12.0.0",
-    "@nestjs/platform-express": "^12.0.1",
     "dotenv": "latest",
     "express": "latest",
     "helmet": "latest",
     "joi": "latest",
     "mongoose": "latest",
-    "pino": "latest",
-    "reflect-metadata": "^0.2.2",
-    "rxjs": "^7.8.2"
+    "pino": "latest"
   },
   "devDependencies": {
     "@eslint/js": "latest",
-    "@nestjs/cli": "^12.0.0",
     "@types/express": "latest",
     "@types/node": "latest",
     "@typescript-eslint/eslint-plugin": "latest",
@@ -49,6 +42,7 @@
     "eslint-config-prettier": "latest",
     "prettier": "latest",
     "typescript": "^5.9.0",
-    "typescript-eslint": "latest"
+    "typescript-eslint": "latest",
+    "tsx": "latest"
   }
 }

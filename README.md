@@ -1,6 +1,6 @@
 # Highland Destinations Backend
 
-Production-oriented NestJS and MongoDB backend for Highland Destinations.
+Production-oriented Express and MongoDB backend for Highland Destinations.
 
 ## Runtime
 
@@ -17,6 +17,7 @@ missing.
 ```text
 npm install
 Copy-Item .env.example .env
+# Set MONGODB_URI in .env if MongoDB is not running locally
 npm run start:dev
 ```
 
@@ -79,7 +80,7 @@ health routes and inspect Vercel function logs if initialization fails.
 
 ## Architecture
 
-The application is a small NestJS service. Controllers handle HTTP concerns, injectable services
+The application is a small Express service. Route handlers handle HTTP concerns, services
 coordinate use cases, and feature modules own Mongoose schemas. The current foundation contains
 configuration, MongoDB lifecycle management, health checks, security defaults, request correlation,
 structured Pino logging, and global error handling.
