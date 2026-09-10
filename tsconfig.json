@@ -3,12 +3,10 @@
     "module": "NodeNext",
     "moduleResolution": "NodeNext",
     "target": "ES2022",
-
     "outDir": "./dist",
 
     "declaration": true,
     "removeComments": true,
-
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
 
@@ -16,7 +14,6 @@
     "experimentalDecorators": true,
 
     "sourceMap": true,
-
     "incremental": true,
     "skipLibCheck": true,
 
@@ -26,10 +23,6 @@
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
     "noUncheckedIndexedAccess": true,
-    "forceConsistentCasingInFileNames": true,
-
-    "paths": {
-      "@/*": ["src/*"]
-    }
+    "forceConsistentCasingInFileNames": true
   }
 }
