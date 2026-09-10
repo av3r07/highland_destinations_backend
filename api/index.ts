@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import { createApp } from '../src/app.bootstrap';
+import { createApp } from '../src/app.bootstrap.js';
 
 let appPromise: ReturnType<typeof createApp> | undefined;
 

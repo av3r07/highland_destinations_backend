@@ -1,4 +1,4 @@
-import { createApp, config, logger } from './app.bootstrap';
+import { createApp, config, logger } from './app.bootstrap.js';
 
 async function bootstrap(): Promise<void> {
   const app = await createApp();

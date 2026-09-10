@@ -2,6 +2,7 @@
   "name": "highland-destinations-backend",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "description": "NestJS and MongoDB backend for Highland Destinations",
   "license": "UNLICENSED",
   "engines": {

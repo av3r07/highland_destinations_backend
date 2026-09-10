@@ -1,4 +1,5 @@
-import { HydratedDocument, Schema } from 'mongoose';
+import { Schema } from 'mongoose';
+import type { HydratedDocument } from 'mongoose';
 
 export interface ContactInquiry {
   name: string;

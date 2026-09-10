@@ -1,6 +1,6 @@
 import { Body, Controller, Post } from '@nestjs/common';
-import { validateCreateContactInquiry } from './contact-inquiries.dto';
-import { ContactInquiriesService } from './contact-inquiries.service';
+import { validateCreateContactInquiry } from './contact-inquiries.dto.js';
+import { ContactInquiriesService } from './contact-inquiries.service.js';
 
 @Controller('contact-inquiries')
 export class ContactInquiriesController {

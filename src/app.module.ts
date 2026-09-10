@@ -1,11 +1,11 @@
 import 'dotenv/config';
 import { Module } from '@nestjs/common';
 import { MongooseModule } from '@nestjs/mongoose';
-import { AppController } from './app.controller';
-import { getConfiguration } from './config/configuration';
-import { HealthModule } from './health/health.module';
-import { ContactInquiriesModule } from './modules/contact-inquiries/contact-inquiries.module';
-import { StatusController } from './modules/status/status.controller';
+import { AppController } from './app.controller.js';
+import { getConfiguration } from './config/configuration.js';
+import { HealthModule } from './health/health.module.js';
+import { ContactInquiriesModule } from './modules/contact-inquiries/contact-inquiries.module.js';
+import { StatusController } from './modules/status/status.controller.js';
 
 const config = getConfiguration();
 

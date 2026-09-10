@@ -1,5 +1,5 @@
-import { AppConfiguration } from './configuration.types';
-import { validateEnvironment } from './env.validation';
+import type { AppConfiguration } from './configuration.types.js';
+import { validateEnvironment } from './env.validation.js';
 
 export function getConfiguration(): AppConfiguration {
   const environment = validateEnvironment();

@@ -1,5 +1,5 @@
 import Joi from 'joi';
-import { HttpError } from '../../common/filters/global-exception.filter';
+import { HttpError } from '../../common/filters/global-exception.filter.js';
 
 export interface CreateContactInquiryDto {
   name: string;

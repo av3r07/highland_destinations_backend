@@ -1,5 +1,5 @@
 import Joi from 'joi';
-import { NodeEnvironment } from './configuration.types';
+import type { NodeEnvironment } from './configuration.types.js';
 
 export interface EnvironmentVariables {
   NODE_ENV: NodeEnvironment;

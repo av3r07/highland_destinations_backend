@@ -1,13 +1,13 @@
 import { NestFactory } from '@nestjs/core';
 import { RequestMethod } from '@nestjs/common';
 import { NestExpressApplication } from '@nestjs/platform-express';
-import { NextFunction, Request, Response } from 'express';
+import type { NextFunction, Request, Response } from 'express';
 import helmet from 'helmet';
 import pino from 'pino';
-import { AppModule } from './app.module';
-import { GlobalExceptionFilter } from './common/filters/global-exception.filter';
-import { requestId } from './common/middleware/request-id.middleware';
-import { getConfiguration } from './config/configuration';
+import { AppModule } from './app.module.js';
+import { GlobalExceptionFilter } from './common/filters/global-exception.filter.js';
+import { requestId } from './common/middleware/request-id.middleware.js';
+import { getConfiguration } from './config/configuration.js';
 
 export const config = getConfiguration();
 export const logger = pino({ level: config.logging.level });
