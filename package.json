@@ -1,48 +1,30 @@
 {
-  "name": "highland-destinations-backend",
-  "version": "0.1.0",
-  "private": true,
-  "type": "module",
-  "description": "Express and MongoDB backend for Highland Destinations",
-  "license": "UNLICENSED",
-  "engines": {
-    "node": ">=24.0.0 <25.0.0",
-    "npm": ">=11.0.0 <12.0.0"
+  "name": "highland_destinations_backend",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/av3r07/highland_destinations_backend#readme",
+  "bugs": {
+    "url": "https://github.com/av3r07/highland_destinations_backend/issues"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/av3r07/highland_destinations_backend.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
   "scripts": {
-    "clean": "node -e \"require('node:fs').rmSync('dist', { recursive: true, force: true })\"",
-    "build": "npm run clean && tsc -p tsconfig.build.json",
-    "format": "prettier --write \"src/**/*.ts\" \"api/**/*.ts\"",
-    "format:check": "prettier --check \"src/**/*.ts\" \"api/**/*.ts\"",
-    "lint": "eslint \"src/**/*.ts\" \"api/**/*.ts\"",
-    "lint:fix": "eslint \"src/**/*.ts\" \"api/**/*.ts\" --fix",
-    "start": "node dist/src/main.js",
-    "start:dev": "tsx watch src/main.ts",
-    "start:debug": "tsx watch --inspect src/main.ts",
-    "start:prod": "node dist/src/main.js",
-    "typecheck": "tsc --noEmit",
-    "check": "npm run format:check && npm run lint && npm run typecheck && npm run build",
-    "security:audit": "npm audit --audit-level=high"
+    "dev": "nodemon index.js",
+    "start": "node index.js"
   },
   "dependencies": {
-    "dotenv": "latest",
-    "express": "latest",
-    "helmet": "latest",
-    "joi": "latest",
-    "mongoose": "latest",
-    "pino": "latest"
-  },
-  "devDependencies": {
-    "@eslint/js": "latest",
-    "@types/express": "latest",
-    "@types/node": "latest",
-    "@typescript-eslint/eslint-plugin": "latest",
-    "@typescript-eslint/parser": "latest",
-    "eslint": "latest",
-    "eslint-config-prettier": "latest",
-    "prettier": "latest",
-    "typescript": "^5.9.0",
-    "typescript-eslint": "latest",
-    "tsx": "latest"
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "express-rate-limit": "^8.7.0",
+    "express-validator": "^7.3.2",
+    "mongoose": "^9.9.5",
+    "nodemon": "^3.1.14"
   }
 }
